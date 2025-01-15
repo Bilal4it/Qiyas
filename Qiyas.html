@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة قياس - شركة ريناد المجد</title>
+    <link rel="icon" href="rmgicon.jpg" type="image/jpeg">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            direction: rtl;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #007BFF;
+            padding: 10px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        nav button {
+            margin: 0 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: white;
+            color: #007BFF;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        nav button:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        #content {
+            margin: 20px auto;
+            padding: 20px;
+            width: 90%;
+            max-width: 1200px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown {
+            margin-top: 10px;
+        }
+
+        .dropdown h3 {
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 5px;
+            text-align: right;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-content {
+            display: none;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .dropdown-content button {
+            margin: 5px 0;
+            padding: 10px 15px;
+            font-size: 14px;
+            cursor: pointer;
+            border: 1px solid #007BFF;
+            background-color: white;
+            color: #007BFF;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .dropdown-content button:hover {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        footer {
+            background-color: #0056b3;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+    <script>
+        function showContent(option) {
+            const contentDiv = document.getElementById('content');
+            if (option === 'criteria') {
+                contentDiv.innerHTML = `<iframe src="https://www.chatbase.co/chatbot-iframe/AGdWMlm7JLrJ-8xMnPo0J" width="100%" style="height: 100%; min-height: 700px" frameborder="0"></iframe>`;
+            } else if (option === 'create') {
+                contentDiv.innerHTML = `<h2>مرحبًا بكم في قسم إنشاء ملفات قياس.</h2>`;
+            } else if (option === 'check') {
+                const perspectives = {
+                    "المنظور الأول: الاستراتيجية والتخطيط": ["التخطيط للتحول الرقمي (5.1)", "الحوكمة للتحول الرقمي (5.2)", "البنية المؤسسية (5.3)"],
+                    "المنظور الثاني: المنظمة والثقافة": ["الثقافة والبيئة الرقمية (5.4)", "تطوير قيادات التحول الرقمي (5.5)", "بناء الكفاءات (5.6)"],
+                    "المنظور الثالث: العمليات والتشغيل": ["إجراءات العمل (5.7)"],
+                    "المنظور الرابع: إدارة المخاطر واستمرارية الأعمال": ["إدارة المخاطر (5.8)", "استمرارية الأعمال (5.9)"],
+                    "المنظور الخامس: تقنية المعلومات": ["الأنظمة الداعمة للتحول الرقمي (5.10)", "البنية التحتية للخدمات التقنية (5.11)", "البنية السحابية (5.12)"],
+                    "المنظور السادس: الحكومة الشاملة": ["منصات الحكومة الشاملة (5.13)"],
+                    "المنظور السابع: القنوات والخدمات": ["جودة الخدمات الرقمية (5.14)", "القنوات والخدمات الرقمية (5.15)"],
+                    "المنظور الثامن: مركزية المستفيد": ["مشاركة المستفيد (5.16)", "تعزيز العلاقة مع المستفيد (5.17)", "تجربة المستفيد (5.18)"],
+                    "المنظور التاسع: البيانات الحكومية": ["حوكمة وإدارة البيانات (5.19)", "استخدام وإتاحة البيانات (5.20)", "البيانات المفتوحة (5.21)"],
+                    "المنظور العاشر: البحث والابتكار": ["الابتكار المؤسسي (5.22)", "الحلول الابتكارية (5.23)"]
+                };
+
+                let html = "";
+                for (const [perspective, standards] of Object.entries(perspectives)) {
+                    html += `<div class='dropdown'>
+                                <h3 onclick="toggleDropdown(this)">${perspective}</h3>
+                                <div class='dropdown-content'>`;
+                    standards.forEach(standard => {
+                        html += `<div>
+                                    <p>${standard}</p>
+                                    <button onclick="handleDocumentCheck(this, '${standard}')">تحميل مستند</button>
+                                    <span class='status'></span>
+                                 </div>`;
+                    });
+                    html += "</div></div>";
+                }
+                contentDiv.innerHTML = html;
+            } else if (option === 'settings') {
+                contentDiv.innerHTML = `<h2>مرحبًا بكم في قسم الإعدادات.</h2>`;
+            }
+        }
+
+        function toggleDropdown(element) {
+            const content = element.nextElementSibling;
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function handleDocumentCheck(button, standard) {
+            const statusSpan = button.nextElementSibling;
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = '.pdf,.docx';
+
+            fileInput.onchange = () => {
+                statusSpan.textContent = 'جاري التحقق من المستند...';
+                setTimeout(() => {
+                    statusSpan.textContent = 'تم';
+                }, 3000);
+            };
+
+            fileInput.click();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>منصة قياس - شركة ريناد المجد</h1>
+    </header>
+
+    <nav>
+        <button onclick="showContent('criteria')">التعرف على معايير قياس التحول الرقمي</button>
+        <button onclick="showContent('create')">إنشاء ملفات قياس</button>
+        <button onclick="showContent('check')">فحص المستندات</button>
+        <button onclick="showContent('settings')">إعدادات</button>
+    </nav>
+
+    <div id="content">
+        <h2>مرحبًا بكم في منصة قياس</h2>
+        <p>يرجى اختيار أحد الخيارات أعلاه لاستكشاف المزيد.</p>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 شركة ريناد المجد. جميع الحقوق محفوظة.</p>
+    </footer>
+</body>
+</html>
